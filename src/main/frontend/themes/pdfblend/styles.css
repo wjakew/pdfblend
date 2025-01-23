@@ -1,0 +1,75 @@
+@font-face {
+    font-family: main;
+    src: url("./PlayfairDisplay-VariableFont_wght.ttf");
+}
+
+
+:root {
+    --primary-font: 'main';
+}
+
+/* text */
+H1 {
+    font-family: var(--primary-font);
+    color: white;
+    font-size: 12rem;
+}
+H6 {
+    color: white;
+    font-size: 20px;
+}
+/* buttons */
+.start-button {
+    background: linear-gradient(270deg, orange, blue);
+    background-size: 200% 100%;
+    animation: gradientAnimation 5s ease infinite;
+    font-size: 25px;
+    color: white;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+.merge-button {
+    background: linear-gradient(270deg, orange, blue);
+    background-size: 200% 100%;
+    animation: gradientAnimation 5s ease infinite;
+    font-size: 25px;
+    color: white;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.super-button{
+    background: linear-gradient(270deg, orange, blue);
+    background-size: 200% 100%;
+    animation: gradientAnimation 5s ease infinite;
+    color: black;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.standard-button {
+    background-color: black;
+    border-radius: 25px;
+    color: white;
+}
+/* components */
+.upload-component {
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 25px;
+    padding: 20px;
+}
+/* pages */
+.home-page {
+    background-color: black;
+    background-size: cover;
+}
