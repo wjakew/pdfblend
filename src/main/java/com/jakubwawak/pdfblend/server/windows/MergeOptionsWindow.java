@@ -7,6 +7,7 @@ package com.jakubwawak.pdfblend.server.windows;
 
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.dnd.GridDropLocation;
@@ -20,6 +21,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.provider.ListDataProvider;
 import com.jakubwawak.pdfblend.maintanance.FileObject;
 import com.jakubwawak.pdfblend.maintanance.MergeEngine;
+import com.jakubwawak.pdfblend.maintanance.NewMergeEngine;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -56,8 +58,9 @@ public class MergeOptionsWindow {
      * Function for preparing components
      */
     void prepareComponents(){
-        name_field = new TextField();
+        name_field = new TextField("New Merged File Name");
         name_field.setPlaceholder("File Name");
+        name_field.setValue("blend_merge");
         name_field.setWidthFull();
 
         file_grid = new Grid<>(FileObject.class,false);
@@ -72,11 +75,9 @@ public class MergeOptionsWindow {
         merge_button = new Button("Merge Files",this::mergebutton_action);
         merge_button.setWidth("100%");
 
-        merge_button.setWidth("40%");merge_button.setHeight("10%");
-        merge_button.getStyle().set("color","black");
-        merge_button.getStyle().set("background-image","linear-gradient(#e38ad9, #FFFFFF)");
+        merge_button.setWidthFull();
+        merge_button.addThemeVariants(ButtonVariant.LUMO_PRIMARY,ButtonVariant.LUMO_SUCCESS);
         merge_button.setIcon(VaadinIcon.FILE.create());
-        merge_button.getStyle().set("border-radius","25px");
 
         file_grid.addDragStartListener(
                 event -> {
@@ -153,14 +154,20 @@ public class MergeOptionsWindow {
             MergeEngine me = new MergeEngine(prepareFileCollection(),fileName);
             File fileToDownload = me.merge();
             if  (fileToDownload != null){
+                // Log the file path for debugging
+                System.out.println("File to download: " + fileToDownload.getAbsolutePath());
+                
                 FileDownloaderComponent fdc = new FileDownloaderComponent(fileToDownload);
-                main_layout.add(fdc.dialog);
+                main_layout.add(fdc.dialog); // Ensure dialog is added to layout
                 fdc.dialog.open();
                 main_dialog.close();
             }
             else{
                 Notification.show("Error during merge. Check log!");
             }
+        }
+        else{
+            Notification.show("Please enter file name!");
         }
     }
 

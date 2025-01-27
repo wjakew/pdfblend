@@ -14,9 +14,10 @@ H1 {
     color: white;
     font-size: 12rem;
 }
-H6 {
+H5 {
+    font-family: var(--primary-font);
     color: white;
-    font-size: 20px;
+    font-size: 1rem;
 }
 /* buttons */
 .start-button {

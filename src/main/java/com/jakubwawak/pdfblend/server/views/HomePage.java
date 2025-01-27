@@ -9,6 +9,8 @@ import com.jakubwawak.pdfblend.server.components.LogoComponent;
 import com.jakubwawak.pdfblend.server.components.UploadComponent;
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.button.ButtonVariant;
+import com.vaadin.flow.component.html.H5;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -54,7 +56,7 @@ public class HomePage extends VerticalLayout {
         uploadComponent = new UploadComponent(this);
 
         start_button = new Button("Create a Merge",VaadinIcon.PLAY.create(),this::start_button_action);
-        start_button.addClassName("start-button");
+        start_button.addThemeVariants(ButtonVariant.LUMO_PRIMARY,ButtonVariant.LUMO_SUCCESS);
 
 
         // add components to layouts
@@ -74,6 +76,7 @@ public class HomePage extends VerticalLayout {
         setJustifyContentMode(JustifyContentMode.CENTER);
 
         add(mainLayout);
+        add(new H5("by Jakub Wawak"));
     }
 
     /**
