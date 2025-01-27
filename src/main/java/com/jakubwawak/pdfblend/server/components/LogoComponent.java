@@ -7,7 +7,6 @@ package com.jakubwawak.pdfblend.server.components;
 
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.H5;
-import com.vaadin.flow.component.html.H6;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 /**
@@ -21,7 +20,9 @@ public class LogoComponent extends VerticalLayout {
      */
     public LogoComponent() {
 
-        add(new H1("blend."));
+        H1 title = new H1("blend.");
+        title.addClassName("title");
+        add(title);
         add(new H5("the safest way to merge pdf files"));
 
         setHeight("100%");

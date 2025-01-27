@@ -58,8 +58,8 @@ public class MergeOptionsWindow {
      * Function for preparing components
      */
     void prepareComponents(){
-        name_field = new TextField("New Merged File Name");
-        name_field.setPlaceholder("File Name");
+        name_field = new TextField("New File Name");
+        name_field.setPlaceholder("so_cool_file_name");
         name_field.setValue("blend_merge");
         name_field.setWidthFull();
 
@@ -121,7 +121,7 @@ public class MergeOptionsWindow {
 
         main_layout.add(new H6("Your selected files"));
         main_layout.add(file_grid);
-        main_layout.add(new H6("Input new file name"));
+        main_layout.add(new H6("You can change the order of files by dragging them"));
         main_layout.add(name_field);
         main_layout.add(new H6("When you ready, merge your files"));
         main_layout.add(merge_button);

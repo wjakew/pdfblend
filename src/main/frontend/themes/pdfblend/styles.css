@@ -9,6 +9,12 @@
 }
 
 /* text */
+.title {
+    font-family: var(--primary-font);
+    color: white;
+    font-size: 12rem;
+}
+
 H1 {
     font-family: var(--primary-font);
     color: white;
@@ -34,8 +40,11 @@ H5 {
     0% {
         background-position: 0% 50%;
     }
-    100% {
+    50% {
         background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }
 .merge-button {
@@ -71,6 +80,23 @@ H5 {
 }
 /* pages */
 .home-page {
-    background-color: black;
-    background-size: cover;
+    background: linear-gradient(270deg, rgb(78, 75, 75), black);
+    background-size: 200% 200%;
+    animation: spinGradient 20s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@keyframes spinGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }

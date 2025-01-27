@@ -1,5 +1,7 @@
 # pdf**blend**
 
+![pdf blend](readme_resources/scr1.png)
+
 ## Overview
 
 **Fully local pdf merging application**
@@ -9,13 +11,13 @@ PdfBlend is a powerful application designed to merge PDF files seamlessly. It pr
 ## Features
 - **Merge Multiple PDFs**: Combine multiple PDF files into a single document.
 - **Drag and Drop Support**: Easily add files to the merge queue using drag and drop.
-- **Preview Functionality**: View the selected PDFs before merging.
 - **Customizable Output**: Choose the order of the files and set output options.
 - **Cross-Platform Compatibility**: Works on Windows, macOS, and Linux.
 
 ## Technology Stack
 - **Java**: The core application is built using Java.
-- **JavaFX**: For the graphical user interface.
+- **Tomcat**: For serving the application.
+- **Vaadin**: For the graphical user interface.
 - **Maven**: For project management and dependency management.
 - **CSS**: For styling the application interface.
 - **PDFBox**: For handling PDF file operations.
