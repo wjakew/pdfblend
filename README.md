@@ -1,7 +1,10 @@
-# PdfBlend Application
+# pdf**blend**
 
 ## Overview
-PdfBlend is a powerful application designed to merge PDF files seamlessly. It provides a user-friendly interface and robust functionality to handle various PDF merging tasks efficiently.
+
+**Fully local pdf merging application**
+
+PdfBlend is a powerful application designed to merge PDF files seamlessly. It provides a user-friendly interface and robust functionality to handle various PDF merging tasks efficiently. Application is open-source and free to use.
 
 ## Features
 - **Merge Multiple PDFs**: Combine multiple PDF files into a single document.
@@ -39,7 +42,9 @@ To deploy the PdfBlend application, follow these steps:
    ```
 
 4. **Access the Application**:
-   Open your web browser and go to `http://localhost:8080` to access the application.
+   Open your web browser and go to `http://localhost:9000` to access the application.
+
+Or simply download the latest release from [here](https://github.com/jakubwawak/pdfblend/releases/latest) and run the executable file with command `java -jar pdfblend.jar`
 
 ## Contributing
 Contributions are welcome! Please submit a pull request or open an issue for any enhancements or bug fixes.
